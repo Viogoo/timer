@@ -1,0 +1,97 @@
+@keyframes colorChange {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  #clock {
+    font-size: 240px; /* Змініть розмір шрифту на свій смак */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #0000ff, #ff00ff); /* Градієнтний фон */
+    -webkit-background-clip: text; /* Прикладання градієнта до тексту */
+    background-clip: text; /* Прикладання градієнта до тексту */
+    color: transparent; /* Робимо текст прозорим */
+    animation: colorChange 5s infinite alternate; /* Анімація переливання кольорів */
+  }
+  
+  
+   
+   @keyframes colorChange {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  body {
+    background-color: black; /*Чорний фон сторінки */
+  }
+  
+  #clock {
+    font-size: 240px; /* Змініть розмір шрифту на свій смак */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black; /* Чорний фон блоку годинника */
+    -webkit-background-clip: text; /* Прикладання градієнта до тексту */
+    background-clip: text; /* Прикладання градієнта до тексту */
+    color: transparent; /* Робимо текст прозорим */
+    animation: colorChange 5s infinite alternate; /* Анімація переливання кольорів */
+  }
+
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    50% {
+      box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+  }
+  
+  body {
+    background-color: black; /* Чорний фон сторінки */
+  }
+  
+  #clock {
+    font-size: 240px; /* Змініть розмір шрифту на свій смак */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .digits {
+    display: inline-block;
+    position: relative; /* Додаємо позиціонування */
+    color: transparent; /* Робимо текст цифр прозорим */
+  }
+  
+  .digits::before {
+    content: ''; /* Додаємо псевдоелементу порожній контент */
+    position: absolute; /* Позиціонуємо підсвітку відносно блоку з цифрами */
+    top: -20px; /* Зсуваємо вгору, щоб було більше місця для підсвітки */
+    left: -20px; /* Зсуваємо вліво, щоб було більше місця для підсвітки */
+    right: -20px; /* Зсуваємо вправо, щоб було більше місця для підсвітки */
+    bottom: -20px; /* Зсуваємо вниз, щоб було більше місця для підсвітки */
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* Задаємо неонову підсвітку */
+    animation: glow 1.5s infinite alternate; /* Анімація неонового ефекту */
+    z-index: -1; /* Розміщуємо підсвітку за текстом */
+  }
+  
+  #clock:hover .digits::before {
+    color: #00ff00; /* Кольорове значення для тексту */
+  }
+  
